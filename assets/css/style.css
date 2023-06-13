@@ -1,0 +1,49 @@
+.container-custom {
+    height: 100%;
+    margin: 0;
+    background: #FAE3D9; /* A light color, feel free to change */
+    font-family: 'Yuji Hentaigana Akari', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    color: #3D7DCA; /* A Pokemon blue, feel free to change */
+    font-size: 4rem; /* Make the title bigger */
+    text-shadow: 1px 1px #FFCB05; /* A lighter shadow */
+    text-align: center; /* Center the text */
+}
+
+#header-image {
+    max-width: 100%;
+    max-height: 300px; /* adjust as needed */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+    .title {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .title {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .title {
+        font-size: 1.5rem;
+    }
+}

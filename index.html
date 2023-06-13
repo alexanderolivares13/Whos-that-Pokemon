@@ -4,33 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel = "stylesheet" type = "text/css" href ="./assets/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Yuji+Hentaigana+Akari&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <title>Who's That Pokemon?</title>
 </head>
 <body>
-    <header>
-        <h1 class="header"> Who's That Pokemon </h1>
-        <!--add image of all pokemon-->
-    </header>
-
-    <main>
-        <section>
-            <form action="" method= "get" class= "search-form" > 
-                <div class ="search-bar"> <input id= "search-name" type = "search" placeholder="Enter Pokemon Name">
-                    <input type ="submit" id= "search-button" value ="Search">
-            </div> </form>
-            
-            <button class="btn button-random"> Surpirse </button>
-
-
-            <p class="directions"> for directions for the page. How to type of select button for pokemon </p>
+    <div class="container-custom">
+        <section class="hero is-medium is-primary is-bold">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title">Who's That Pokemon?</h1>
+                    <img id="header-image" src="./assets/images/all-pokemon.jpeg" alt="All Pokemon">
+                </div>
+            </div>
         </section>
-    </main>
+
+        <section class="section">
+            <div class="container">
+                <div class="field has-addons has-addons-centered">
+                    <div class="control">
+                        <input id="search-name" class="input" type="text" placeholder="Enter Pokemon Name">
+                    </div>
+                    <div class="control">
+                        <button id="search-button" class="button is-info">Search</button>
+                    </div>
+                </div>
+
+                <div class="has-text-centered">
+                    <button class="button is-warning">Surprise</button>
+                </div>
+
+                <p class="content has-text-centered">For directions for the page. How to type or select button for pokemon</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/pokemon-list.js"></script>
 </body>
-
-<script src="./assets/js/script.js"></script>
-<script src="./assets/js/pokemon-list.js"></script>
-
-</html> 
+</html>
