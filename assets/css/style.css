@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container-custom {
     height: 100%;
     margin: 0;
@@ -14,10 +15,43 @@
     font-size: 4rem; /* Make the title bigger */
     text-shadow: 1px 1px #FFCB05; /* A lighter shadow */
     text-align: center; /* Center the text */
+=======
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #D3D3D3;
+    font-family: 'Arial', sans-serif;
+}
+
+.pokeball-theme .hero.is-bold {
+    background: linear-gradient(180deg, #FF3232 50%, #000 60%, #fff 70%);
+}
+
+.title {
+    font-family: 'Yuji Hentaigana Akari', sans-serif; 
+    color: #fff;
+    font-size: 5rem;
+    text-shadow: 3px 3px 2px #000;
+}
+
+.button.is-danger {
+    background-color: #FF3232;
+}
+
+.button.is-white {
+    background-color: #fff;
+    border: 2px solid #000;
+    color: #000;
+}
+
+.content, .header, .directions, input, button {
+    color: #000;
+>>>>>>> 541d4e1528c0db355b13d53e58b58e03c94eb2a2
 }
 
 #header-image {
     max-width: 100%;
+<<<<<<< HEAD
     max-height: 300px; /* adjust as needed */
     height: auto;
     display: block;
@@ -27,23 +61,48 @@
 @media screen and (max-width: 1200px) {
     .title {
         font-size: 3rem;
+=======
+    max-height: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+@media screen and (max-width: 1200px) {
+    .title {
+        font-size: 4rem;
+>>>>>>> 541d4e1528c0db355b13d53e58b58e03c94eb2a2
     }
 }
 
 @media screen and (max-width: 1000px) {
     .title {
+<<<<<<< HEAD
         font-size: 2.5rem;
+=======
+        font-size: 3.5rem;
+>>>>>>> 541d4e1528c0db355b13d53e58b58e03c94eb2a2
     }
 }
 
 @media screen and (max-width: 800px) {
     .title {
+<<<<<<< HEAD
         font-size: 2rem;
+=======
+        font-size: 3rem;
+>>>>>>> 541d4e1528c0db355b13d53e58b58e03c94eb2a2
     }
 }
 
 @media screen and (max-width: 600px) {
     .title {
+<<<<<<< HEAD
         font-size: 1.5rem;
+=======
+        font-size: 2.5rem;
+>>>>>>> 541d4e1528c0db355b13d53e58b58e03c94eb2a2
     }
 }
