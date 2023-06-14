@@ -5,38 +5,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Yuji+Hentaigana+Akari&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <title>Who's That Pokemon?</title>
 </head>
 
-<body>
-    <header>
-        <h1 class="header"> Who's That Pokemon </h1>
-        <p> Welcome to the world of Pokémon! Search through our API to find stats and Giphy of any Pokémon.  </p>
-    </header>
-        
-        <main>
-        <section>
+<body class="pokeball-theme">
+    <section class="hero is-medium is-bold">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title has-text-white">Who's That Pokemon?</h1>
+                <p class="subtitle has-text-white"> Welcome to the world of Pokémon! Search through our API to find stats and Giphy of any Pokémon.  </p>
+                <img id="header-image" src="./assets/images/all-pokemon.jpeg" alt="All Pokemon">
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
             <form action="" method="get" class="search-form">
-                <div class="search-bar">
-                    <input id="search-name" type="search" placeholder="Enter Pokemon Name">
-                    <input type="submit" id="search-button" value="Search">
+                <div class="field has-addons has-addons-centered">
+                    <div class="control">
+                        <input id="search-name" class="input" type="text" placeholder="Enter Pokemon Name">
+                    </div>
+                    <div class="control">
+                        <button id="search-button" class="button is-danger">Search</button>
+                    </div>
                 </div>
             </form>
 
-            <button class="btn button-random"> Surpirse </button>
+            <div class="has-text-centered">
+                <button class="btn button-random button is-white">Surprise</button>
+            </div>
 
+            <p class="content has-text-black has-text-centered">Use the search bar to enter a name of any Pokémon or select "Surprise" and we will randomize one for you!</p>
+        </div>
+    </section>
 
-            <p class="directions"> Use the search bar to enter a name of any Pokémon or select "Surprise" and we will randomize one for you! </p>
-        </section>
-    </main>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/pokemon-list.js"></script>
 </body>
-
-<script src="./assets/js/script.js"></script>
-<script src="./assets/js/pokemon-list.js"></script>
 
 </html>
