@@ -1,21 +1,12 @@
-
-var searchButton= document.getElementById("#search-button")
-searchButton.addEventListener("click", function(pokeFetch) {
-
-
-});
-
-var surpriseButton = document.getElementsByClassName("button-random")
-surpriseButton.addEventListener("click", function (randomPokeFetch){
-
-});
-
-var nextButton = document.getElementsByClassName("#next-button")
-nextButton.addEventListener("click", function (giphyFetch) {
-
-});
 var pokeValue = "";
 var searchBarEl = $(".search-name");
+var surpriseButton = $(".button-random");
+var searchButton = $("#search-button");
+var nextButton = $("#next-button");
+var imgEl = $(".pokemon-img")
+var figureEl = $(".pokemon-info");
+var giphEl = $(".pokemon-gif");
+var userWindow = window.location.href.includes("search.html");
 
 var randomPokeFetch = function(){
     var randomNum = Math.floor(Math.random() * pokemonList.length);
@@ -23,22 +14,27 @@ var randomPokeFetch = function(){
     pokeValue = pokeValue.toLowerCase();
     // this code generated the random pokemon name that will be picked to be used by both APIs
     var pokeAPIurl = "https://pokeapi.co/api/v2/pokemon/" + pokeValue
+    console.log(pokeAPIurl)
     fetch (pokeAPIurl)
     .then (function(response){
         return response.json();
     })
     .then (function (data){
         localStorage.setItem("data", JSON.stringify(data));
+        console.log(data);
+        window.location.href = "assets/search.html"
     })
     
-    var giphyAPIurl = "https://api.giphy.com/v1/stickers/search?q=" + pokeValue + "&api_key=M1nneBO2F2uWYOhj8nw5UULJYWJSrSW0"
+    var giphyAPIurl = "https://api.giphy.com/v1/stickers/search?q=" + pokeValue + "&limit=5&api_key=M1nneBO2F2uWYOhj8nw5UULJYWJSrSW0"
+    console.log(giphyAPIurl)
     fetch (giphyAPIurl)
     .then (function (response) {
-       return response.json();
+        return response.json();
     })
-    .then (function (data){
-        localStorage.setItem("gifData", JSON.stringify(data));
-        })
+    .then (function (gifData){
+        localStorage.setItem("gifData", JSON.stringify(gifData));
+        console.log(gifData)
+    })
   }
 
 // The this function makes an API call depending on the name that the user enters
@@ -50,20 +46,20 @@ var pokeFetch = function() {
         return response.json();
     })
     .then (function (data){
-        localStorage.setItem("gifData", JSON.stringify(data));
+        localStorage.setItem("data", JSON.stringify(data));
     })
 }
 
 // The this function makes an API call depending on the name that the user enters
 var giphyFetch = function() {
     // add variable to get the value from the search form and set it as the pokeValue
-    var giphyAPIurl = "https://api.giphy.com/v1/stickers/search?q=" + pokeValue + "&api_key=M1nneBO2F2uWYOhj8nw5UULJYWJSrSW0"
+    var giphyAPIurl = "https://api.giphy.com/v1/stickers/search?q=" + pokeValue + "&limit=5&api_key=M1nneBO2F2uWYOhj8nw5UULJYWJSrSW0"
     fetch (giphyAPIurl)
     .then (function (response) {
        return response.json();
     })
-    .then (function (data){
-        localStorage.setItem("gifData", JSON.stringify(data));
+    .then (function (gifData){
+        localStorage.setItem("gifData", JSON.stringify(gifData));
     })
 }
 
@@ -72,8 +68,10 @@ var generateGif = function(){
     var stickerUrl = gifData.data[0].embed_url;
     var pokeSticker = document.createElement('iframe');
         pokeSticker.setAttribute("src", stickerUrl);
+        pokeSticker.setAttribute("alt", "pokemon-gif")
+        giphEl.append(pokeSticker);
 }
-// TODO: SectionEL needs to be changed to an area in the results page
+// TODO: containerTest needs to be changed to an area in the results page
 var generateInfo = function(){
     // the following lines point the the properties of the JSON object with the respective information for the pokemon that was searched
     var data = JSON.parse(localStorage.getItem("data"))
@@ -88,23 +86,24 @@ var generateInfo = function(){
     var pokemonWeight = "Weight: " + data.weight * .2204 + " lbs";
     var pokemonInfo = [pokemonName, pokemonNumber, pokemonHeight, pokemonWeight];
     imgCreate.setAttribute("src", pokemonArtwork);
-    sectionEl.append(imgCreate);
+    imgCreate.setAttribute("alt", "pokemon-artwork")
+    imgEl.append(imgCreate);
     for(i = 0; i < pokemonInfo.length; i++){
         var lineCreate = document.createElement("p");
             lineCreate.textContent = pokemonInfo[i];
             lineCreate.setAttribute("class", "pokemon-info");
-            sectionEl.append(lineCreate);
+            figureEl.append(lineCreate);
     }
-    // A for loop to get every available ability to the pokemon and replaces any hyphens with spaces for a cleaner look
+    // A for loop to get every available ability to the pokemon and replaces any hyphens with spaces for a cleaner look. The loop also creates a new <p> element and appends it for every different ability that is obtained from the API.
     for (i = 0; i < data.abilities.length; i++){
         var abilityName = data.abilities[i].ability.name;
         var pokemonAbilities = "Ability: " + abilityName.replace("-", " ");
         var lineCreate = document.createElement("p");
             lineCreate.textContent = pokemonAbilities;
             lineCreate.setAttribute("class", "pokemon-info");
-            sectionEl.append(lineCreate);
+            figureEl.append(lineCreate);
     }
-    // a for loop to get every base stat for the pokemon and replaces any hyphens with spaces for a cleaner look
+    // a for loop to get every base stat for the pokemon and replaces any hyphens with spaces for a cleaner look. The loop also creates a new <p> element and appends it for every new stat that is obtained from the API.
     for (i = 0; i < data.stats.length; i++){ 
         var statName =  data.stats[i].stat.name;
         var baseStat = data.stats[i].base_stat;
@@ -113,6 +112,29 @@ var generateInfo = function(){
         var lineCreate = document.createElement("p");
             lineCreate.textContent = pokemonStats;
             lineCreate.setAttribute("class", "pokemon-info");
-            sectionEl.append(lineCreate);
+            figureEl.append(lineCreate);
     }
+    generateGif();
 }
+
+var surpriseFetchHandler = function(){
+    localStorage.clear();
+    randomPokeFetch();
+}
+
+if (userWindow){
+    generateInfo();
+}
+
+
+// searchButton.on("click", function() {
+
+
+// });
+
+surpriseButton.on("click", surpriseFetchHandler);
+
+
+// nextButton.on("click", function () {
+
+// });
