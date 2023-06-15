@@ -1,4 +1,4 @@
-var searchBarEl = $(".search-name");
+var searchBarEl = $("#search-name");
 var surpriseButton = $(".button-random");
 var searchButton = $("#search-button");
 var nextButton = $("#next-button");
@@ -108,10 +108,12 @@ if (userWindow){
 }
 
 
-// searchButton.on("click", function() {
-
-
-// });
+searchButton.on("click", function(event) {
+    event.preventDefault();
+    var pokeValue = searchBarEl.val();
+    pokemonValue.toLowerCase();
+    pokeFetch(pokeValue);
+});
 
 surpriseButton.on("click", surpriseFetchHandler);
 
