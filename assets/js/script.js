@@ -111,7 +111,7 @@ if (userWindow){
 searchButton.on("click", function(event) {
     event.preventDefault();
     var pokeValue = searchBarEl.val();
-    pokemonValue.toLowerCase();
+    pokeValue.toLowerCase();
     pokeFetch(pokeValue);
 });
 
