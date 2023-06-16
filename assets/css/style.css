@@ -10,10 +10,10 @@ html, body {
 }
 
 .title {
-    font-family: 'Yuji Hentaigana Akari', sans-serif; 
-    color: #fff;
+    font-family: 'Pokemon Solid', sans-serif; 
+    color: #ffcb05;
     font-size: 5rem;
-    text-shadow: 3px 3px 2px #000;
+    text-shadow: 5px 3px 2px #3c5aa6;
 }
 
 .button.is-danger {
