@@ -9,6 +9,7 @@ var userWindow = window.location.href.includes("search.html");
 var modalEl = $(".modal");
 var modalButton = $(".modal-close");
 var n = 0;
+var homeButton = $(".button-home");
 
 var randomPokeFetch = function(){
     var randomNum = Math.floor(Math.random() * pokemonList.length);
@@ -25,13 +26,13 @@ var pokeFetch = function(pokeValue) {
     .then (function(response){
         if (response.status === 200){
             giphyFetch(pokeValue);
-        } else if (response.status === 404){
+        } else if (response.status !== 200){
             $(modalEl).attr("class", "modal is-active");
         }
         return response.json();
     })
     .then (function (data){
-        localStorage.setItem("data", JSON.stringify(data));
+            localStorage.setItem("data", JSON.stringify(data));
     })
 }
 
@@ -51,11 +52,15 @@ var giphyFetch = function(pokeValue) {
 
 var generateGif = function(){
     var gifData = JSON.parse(localStorage.getItem("gifData"));
+    if (gifData.pagination.count === 0){
+        return;
+    } else if (gifData.data[0].embed_url){
     var stickerUrl = gifData.data[0].embed_url;
     var pokeSticker = document.createElement('iframe');
         pokeSticker.setAttribute("src", stickerUrl);
         pokeSticker.setAttribute("alt", "pokemon-gif")
-        giphEl.append(pokeSticker);
+        giphEl.append(pokeSticker); 
+}
 }
 var generateInfo = function(){
     // the following lines point the the properties of the JSON object with the respective information for the pokemon that was searched
@@ -131,4 +136,9 @@ nextButton.on("click", function () {
 
 modalButton.on("click", function() {
     $(modalEl).attr("class", "modal");
+})
+
+homeButton.on("click", function(){
+    window.location.href = "../index.html";
+    localStorage.clear();
 })
