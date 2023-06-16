@@ -21,9 +21,9 @@ iframe {max-width: 128px;
     
 .title-main {
     font-family: 'Pokemon Solid', sans-serif;
-    color:rgb(225, 225, 60);
+    color: #ffcb05;
     font-size: 45px;
-    text-shadow: 5px 3px 2px rgb(14, 41, 174);
+    text-shadow: 5px 3px 2px #3c5aa6;
 }
 
 .title {
