@@ -28,9 +28,9 @@ iframe {max-width: 128px;
 .title {
     background-color: #FF3232;
     font-family: 'Teko', sans-serif;
-    color: #fdfdfd;
-    font-size: 80px;
-    /*text-shadow: 1px 1px 2px black;*/
+    color: rgb(229, 223, 223);
+    font-size: 40px;
+    text-shadow: 1px 1px 2px black;
     border-radius: 10px;
     padding: 20px;
     width: 500px;

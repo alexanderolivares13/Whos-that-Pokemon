@@ -17,12 +17,27 @@
     <section class="hero is-medium is-bold">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h1 class="title">Who's That Pokémon?</h1>
+                <h1 class="title has-text-white">Who's That Pokémon?</h1>
                 <p class="subtitle has-text-white"> Welcome to the world of Pokémon! Search through our API to find stats and Giphy of any Pokémon.  </p>
                 <img id="header-image" src="./assets/images/all-pokemon.jpeg" alt="All Pokemon">
             </div>
         </div>
     </section>
+
+    <div class="modal is-centered">
+        <div class="modal-background"></div>
+        <div class="modal-content is-clipped">
+            <div style="text-align: center;">
+                <h2 class="is-size-1 has-text-light">No Results Found</h2>
+            </div>
+            <div class="columns">
+                <div class="column is-one-third"></div>
+                <img class="column is-one-third" src=".//assets/images/sad-pikachu.gif" alt="sad-pikachu">
+                <div class="column is-one-third"></div>
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
 
     <section class="section">
         <div class="container">
@@ -41,7 +56,8 @@
                 <button class="btn button-random button is-white">Surprise</button>
             </div>
 
-            <p class="content has-text-black has-text-centered">Use the search bar to enter a name of any Pokémon or select "Surprise" and we will randomize one for you!</p>
+            <p class="content has-text-black has-text-centered">Use the search bar to enter a name of any Pokémon or
+                select "Surprise" and we will randomize one for you!</p>
         </div>
     </section>
 

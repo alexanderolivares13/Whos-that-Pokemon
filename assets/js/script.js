@@ -6,6 +6,8 @@ var imgEl = $(".pokemon-img");
 var figureEl = $(".pokemon-info");
 var giphEl = $(".pokemon-gif");
 var userWindow = window.location.href.includes("search.html");
+var modalEl = $(".modal");
+var modalButton = $(".modal-close");
 var n = 0;
 
 var randomPokeFetch = function(){
@@ -23,6 +25,8 @@ var pokeFetch = function(pokeValue) {
     .then (function(response){
         if (response.status === 200){
             giphyFetch(pokeValue);
+        } else if (response.status === 404){
+            $(modalEl).attr("class", "modal is-active");
         }
         return response.json();
     })
@@ -34,7 +38,7 @@ var pokeFetch = function(pokeValue) {
 // The this function makes an API call depending on the name that the user enters
 var giphyFetch = function(pokeValue) {
     // add variable to get the value from the search form and set it as the pokeValue
-    var giphyAPIurl = "https://api.giphy.com/v1/stickers/search?q=" + pokeValue + "&limit=5&api_key=M1nneBO2F2uWYOhj8nw5UULJYWJSrSW0";
+    var giphyAPIurl = "https://api.giphy.com/v1/stickers/search?q=" + pokeValue + "+pokemon&limit=5&api_key=M1nneBO2F2uWYOhj8nw5UULJYWJSrSW0";
     fetch (giphyAPIurl)
     .then (function (response) {
         return response.json();
@@ -111,7 +115,7 @@ if (userWindow){
 searchButton.on("click", function(event) {
     event.preventDefault();
     var pokeValue = searchBarEl.val();
-    pokeValue.toLowerCase();
+    pokeValue = pokeValue.toLowerCase();
     pokeFetch(pokeValue);
 });
 
@@ -119,6 +123,12 @@ surpriseButton.on("click", surpriseFetchHandler);
 
 
 nextButton.on("click", function () {
-n++;
-
+    n++;
+    var gifData = JSON.parse(localStorage.getItem("gifData"));
+    var stickerUrl = gifData.data[n].embed_url;
+        $("iframe").attr("src", stickerUrl);
 });
+
+modalButton.on("click", function() {
+    $(modalEl).attr("class", "modal");
+})
