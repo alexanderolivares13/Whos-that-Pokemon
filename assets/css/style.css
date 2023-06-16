@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-.container-custom {
-    height: 100%;
-    margin: 0;
-    background: #FAE3D9; /* A light color, feel free to change */
-    font-family: 'Yuji Hentaigana Akari', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.title {
-    color: #3D7DCA; /* A Pokemon blue, feel free to change */
-    font-size: 4rem; /* Make the title bigger */
-    text-shadow: 1px 1px #FFCB05; /* A lighter shadow */
-    text-align: center; /* Center the text */
-=======
 html, body {
     height: 100%;
     margin: 0;
@@ -46,22 +28,10 @@ html, body {
 
 .content, .header, .directions, input, button {
     color: #000;
->>>>>>> 541d4e1528c0db355b13d53e58b58e03c94eb2a2
 }
 
 #header-image {
     max-width: 100%;
-<<<<<<< HEAD
-    max-height: 300px; /* adjust as needed */
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-@media screen and (max-width: 1200px) {
-    .title {
-        font-size: 3rem;
-=======
     max-height: 300px;
     height: auto;
     display: block;
@@ -73,36 +43,23 @@ html, body {
 @media screen and (max-width: 1200px) {
     .title {
         font-size: 4rem;
->>>>>>> 541d4e1528c0db355b13d53e58b58e03c94eb2a2
     }
 }
 
 @media screen and (max-width: 1000px) {
     .title {
-<<<<<<< HEAD
-        font-size: 2.5rem;
-=======
         font-size: 3.5rem;
->>>>>>> 541d4e1528c0db355b13d53e58b58e03c94eb2a2
     }
 }
 
 @media screen and (max-width: 800px) {
     .title {
-<<<<<<< HEAD
-        font-size: 2rem;
-=======
         font-size: 3rem;
->>>>>>> 541d4e1528c0db355b13d53e58b58e03c94eb2a2
     }
 }
 
 @media screen and (max-width: 600px) {
     .title {
-<<<<<<< HEAD
-        font-size: 1.5rem;
-=======
         font-size: 2.5rem;
->>>>>>> 541d4e1528c0db355b13d53e58b58e03c94eb2a2
     }
 }
