@@ -1,37 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type = "text/css" href ="./assets/css/searchstyle.css">
-    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Yuji+Hentaigana+Akari&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!--<link href="https://fonts.googleapis.com/css2?family=Yuji+Hentaigana+Akari&display=swap" rel="stylesheet">-->
+    <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <link rel ="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" type = "text/css" href ="./css/searchstyle.css">
     <title>Search Results</title>
 </head>
+
 <body>
-    <header class="results-header">
-        <h1> Here are your results! </h1>
-        <p> <!--other directions or information?--> </p>
-    </header>
-
-    <main>
-       <div class="left"> <h3> View your Pokémon results below</h3>
-        <section class="stats-results">
+<div class ="block">
+    <section class="hero is-danger">
+        <div class ="hero-body">
+            <div class ="container">
+                <h1 class="title-main has-text-centered"> Here are your results! </h1>
+            </div>
         </div>
-
-        <div class="middle"> 
-        <h3> Hit next to view another GIPH of your Pokémon</h3>
-        <section class="giph-results"> </section>
-        <button class="btn button-next"> Next </button>
+    </section>
+</div>
+   
+    <section>
+    <div class ="columns is-vcentered">
+        <div class="column"></div>
+        <div class ="column is-half is-narrow"> 
+            <div class ="card">
+                <div class ="card-content is-centered">
+                    <h2 class="title has-text-centered"> View your Pokémons stats below</h2>
+                    <figure class="image is-128x160 has-text-centered pokemon-img pokemon-info">
+                        <!--<img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">-->
+                        <p></p>
+                    </figure>
+            </div>
         </div>
+    </div>
 
-
-
-    </main>
+    <section class ="giph-results">
+    <div class="columns">
+        <div class ="column">
+            <div class ="card">
+                <div class ="card-content">
+                    <figure class="image is-128x128 pokemon-gif">
+                    <!--<img src= "./images/sad-pikachu.gif" alt="sad-pikachu">-->
+                    </figure>
+                    <h3> Hit next to view another GIPH of your Pokémon</h3>
+                    <button class ="button is-rounded is-dark is-hovered" id="nex-button"> Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="column"></div>
+    </div>
+    </section>
+    
+    <script src="./js/script.js"></script>
+    <script src="./js/pokemon-list.js"></script>   
     
 </body>
-<script src="./assets/js/script.js"></script>
-<script src="./assets/js/pokemon-list.js"></script>
+
+    
+   
+
+
 </html>
