@@ -6,8 +6,8 @@ var imgEl = $(".pokemon-img");
 var figureEl = $(".pokemon-info");
 var giphEl = $(".pokemon-gif");
 var userWindow = window.location.href.includes("search.html");
-var modalEl = $(".modal")
-var modalButton = $(".modal-close")
+var modalEl = $(".modal");
+var modalButton = $(".modal-close");
 var n = 0;
 
 var randomPokeFetch = function(){
