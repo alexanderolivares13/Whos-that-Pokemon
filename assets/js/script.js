@@ -1,48 +1,29 @@
-var pokeValue = "";
-var searchBarEl = $(".search-name");
+var searchBarEl = $("#search-name");
 var surpriseButton = $(".button-random");
 var searchButton = $("#search-button");
 var nextButton = $("#next-button");
-var imgEl = $(".pokemon-img")
+var imgEl = $(".pokemon-img");
 var figureEl = $(".pokemon-info");
 var giphEl = $(".pokemon-gif");
 var userWindow = window.location.href.includes("search.html");
+var n = 0;
 
 var randomPokeFetch = function(){
     var randomNum = Math.floor(Math.random() * pokemonList.length);
     var pokeValue = pokemonList[randomNum];
     pokeValue = pokeValue.toLowerCase();
-    // this code generated the random pokemon name that will be picked to be used by both APIs
-    var pokeAPIurl = "https://pokeapi.co/api/v2/pokemon/" + pokeValue
-    console.log(pokeAPIurl)
-    fetch (pokeAPIurl)
-    .then (function(response){
-        return response.json();
-    })
-    .then (function (data){
-        localStorage.setItem("data", JSON.stringify(data));
-        console.log(data);
-        window.location.href = "assets/search.html"
-    })
-    
-    var giphyAPIurl = "https://api.giphy.com/v1/stickers/search?q=" + pokeValue + "&limit=5&api_key=M1nneBO2F2uWYOhj8nw5UULJYWJSrSW0"
-    console.log(giphyAPIurl)
-    fetch (giphyAPIurl)
-    .then (function (response) {
-        return response.json();
-    })
-    .then (function (gifData){
-        localStorage.setItem("gifData", JSON.stringify(gifData));
-        console.log(gifData)
-    })
+    pokeFetch(pokeValue);
   }
 
 // The this function makes an API call depending on the name that the user enters
-var pokeFetch = function() {
+var pokeFetch = function(pokeValue) {
     // add variable to get the value from the search form and set it as the pokeValue
-    var pokeAPIurl = "https://pokeapi.co/api/v2/pokemon/" + pokeValue
+    var pokeAPIurl = "https://pokeapi.co/api/v2/pokemon/" + pokeValue;
     fetch (pokeAPIurl)
     .then (function(response){
+        if (response.status === 200){
+            giphyFetch(pokeValue);
+        }
         return response.json();
     })
     .then (function (data){
@@ -51,15 +32,16 @@ var pokeFetch = function() {
 }
 
 // The this function makes an API call depending on the name that the user enters
-var giphyFetch = function() {
+var giphyFetch = function(pokeValue) {
     // add variable to get the value from the search form and set it as the pokeValue
-    var giphyAPIurl = "https://api.giphy.com/v1/stickers/search?q=" + pokeValue + "&limit=5&api_key=M1nneBO2F2uWYOhj8nw5UULJYWJSrSW0"
+    var giphyAPIurl = "https://api.giphy.com/v1/stickers/search?q=" + pokeValue + "&limit=5&api_key=M1nneBO2F2uWYOhj8nw5UULJYWJSrSW0";
     fetch (giphyAPIurl)
     .then (function (response) {
-       return response.json();
+        return response.json();
     })
     .then (function (gifData){
         localStorage.setItem("gifData", JSON.stringify(gifData));
+        window.location.href = "assets/search.html";
     })
 }
 
@@ -71,11 +53,10 @@ var generateGif = function(){
         pokeSticker.setAttribute("alt", "pokemon-gif")
         giphEl.append(pokeSticker);
 }
-// TODO: containerTest needs to be changed to an area in the results page
 var generateInfo = function(){
     // the following lines point the the properties of the JSON object with the respective information for the pokemon that was searched
-    var data = JSON.parse(localStorage.getItem("data"))
-    var imgCreate = document.createElement("img")
+    var data = JSON.parse(localStorage.getItem("data"));
+    var imgCreate = document.createElement("img");
     var pokemonArtwork = data.sprites.other["official-artwork"].front_default;
     var pokemonN = data.name;
         pokemonN = pokemonN.toUpperCase();
@@ -86,7 +67,7 @@ var generateInfo = function(){
     var pokemonWeight = "Weight: " + data.weight * .2204 + " lbs";
     var pokemonInfo = [pokemonName, pokemonNumber, pokemonHeight, pokemonWeight];
     imgCreate.setAttribute("src", pokemonArtwork);
-    imgCreate.setAttribute("alt", "pokemon-artwork")
+    imgCreate.setAttribute("alt", "pokemon-artwork");
     imgEl.append(imgCreate);
     for(i = 0; i < pokemonInfo.length; i++){
         var lineCreate = document.createElement("p");
@@ -127,14 +108,17 @@ if (userWindow){
 }
 
 
-// searchButton.on("click", function() {
-
-
-// });
+searchButton.on("click", function(event) {
+    event.preventDefault();
+    var pokeValue = searchBarEl.val();
+    pokeValue.toLowerCase();
+    pokeFetch(pokeValue);
+});
 
 surpriseButton.on("click", surpriseFetchHandler);
 
 
-// nextButton.on("click", function () {
+nextButton.on("click", function () {
+n++;
 
-// });
+});
