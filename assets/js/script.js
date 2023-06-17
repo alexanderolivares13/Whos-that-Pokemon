@@ -21,6 +21,9 @@ var randomPokeFetch = function(){
 // The this function makes an API call depending on the name that the user enters
 var pokeFetch = function(pokeValue) {
     // add variable to get the value from the search form and set it as the pokeValue
+    if (pokeValue === "") {
+        return;
+    }
     var pokeAPIurl = "https://pokeapi.co/api/v2/pokemon/" + pokeValue;
     fetch (pokeAPIurl)
     .then (function(response){
