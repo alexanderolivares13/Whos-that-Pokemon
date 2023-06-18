@@ -59,7 +59,7 @@ var giphyFetch = function(pokeValue) {
 
 // a 3rd fetch function used to get the fun fact on the search.html page
 var speciesFetch = function(pokeValue) {
-    var speciesAPIurl = "https:/pokeapi.co/api/v2/pokemon-species/" + pokeValue
+    var speciesAPIurl = "https://pokeapi.co/api/v2/pokemon-species/" + pokeValue
     fetch (speciesAPIurl)
     .then (function(response){
         return response.json();
