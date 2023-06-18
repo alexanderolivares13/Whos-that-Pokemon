@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link href="https://fonts.googleapis.com/css2?family=Yuji+Hentaigana+Akari&display=swap" rel="stylesheet">-->
     <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
@@ -19,8 +18,10 @@
     <section class="hero is-danger">
         <div class ="hero-body">
             <div class ="container">
+                <!-- used BULMA styling to center items-->
                 <h1 class="title-main has-text-centered"> Here are your results! </h1>
                 <div class="buttons">
+                    <!--Used BULMA for coloring button-->
                     <button class="button button-home is-danger">Home</button>
                   </div>
             </div>
@@ -28,14 +29,15 @@
     </section>
 </div>
 
-   
+   <!--used columns to create nested column structed-->
     <section>
     <div class ="columns is-vcentered">
         <div class="column"></div>
         <div class ="column is-half is-narrow"> 
+            <!--Used BULMA for creating card and styling info-->
             <div class ="card">
                 <div class ="card-content is-centered">
-                    <h2 class="title has-text-centered"> View your Pokémons stats below</h2>
+                    <h2 class="title has-text-centered"> View your Pokémon stats below</h2>
                     <figure class="image is-128x160 has-text-centered pokemon-img pokemon-info">
                         <p></p>
                     </figure>
@@ -43,7 +45,7 @@
         </div>
     </div>
     
-
+    
     <section class ="giph-results">
     <div class="columns">
         <div class ="column">
@@ -51,7 +53,8 @@
                 <div class ="card-content">
                     <figure class="image is-128x128 pokemon-gif">
                     </figure>
-                    <h3> Hit next to view another GIPH of your Pokémon</h3>
+                    <!--Used BULMA to style button-->
+                    <h3> Hit next to view another GIPHY of your Pokémon</h3>
                     <button class ="button is-rounded is-dark is-hovered" id="next-button"> Next</button>
                 </div>
             </div>
