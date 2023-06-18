@@ -8,7 +8,7 @@
 - [License](#license)
 
 ## Description 
-- User will be prompted to search Pokémon API for a pokémon. User can enter in any Pokémon name and click search button to search Pokémon API for corresponding reslut or click Surprise for random search. User can then view results pulled from both Pokémon API and GIPHY API. 
+- This project was created to challenge us as a group to work together to be able to build a responsive website with a polished UI by applying everything we've learned throughout the first block of our course. Furthermore, it helped us better understand the importance of version control and using git to ensure that we have changes that we can revert to as well as learning how to address and fix any conflicting code. On the site the user will be prompted to search Pokémon API for a pokémon. User can enter in any Pokémon name and click search button to search Pokémon API for corresponding reslut or click Surprise for random search. User can then view results pulled from both Pokémon API and GIPHY API. 
 
 ## Installation
 - N/A
