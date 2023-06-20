@@ -22,15 +22,19 @@
 
 
 - Screenshot of Search results page:
-![resultspg](https://github.com/alexanderolivares13/Whos-that-Pokemon/assets/85318206/1ef95304-efca-41ad-a17b-fe982b33d1fd)
+![resultspg](assets/images/search-html-screenshot.png)
 
 
 ## Credits
 - Bulma CSS Framework: https://bulma.io/documentation/
 - The Pokemon font used on the page: https://fonts.cdnfonts.com/css/pokemon-solid
 - Jquery: https://code.jquery.com/jquery-3.7.0.min.js
-- The Pokemon API: https://pokeapi.co/
+- The Pokémon API: https://pokeapi.co/
 - The GIPHY API: https://developers.giphy.com/
+- The Pokémon images & names are property of Nintendo/Game Freak
+- Collaberators: 
+ - Elaine Martinez (Github: https://github.com/elainefmartinez)
+ - Liam Robertson (Github: https://github.com/liam04290)
 
 ## License
 - Please refer to the LICENSE in the Repo.
